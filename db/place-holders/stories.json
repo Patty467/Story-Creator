@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Story 1",
+    "author": "User 1",
+    "snippet": "Lorem ipsum dolor sit amet...",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Story 2",
+    "author": "User 2",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Story 3",
+    "author": "User 3",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": true
+  },
+  {
+    "id": 4,
+    "title": "Story 4",
+    "author": "User 4",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": true
+  }
+]

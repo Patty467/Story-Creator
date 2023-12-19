@@ -1,0 +1,23 @@
+<% stories.forEach(story=> { %>
+  <% if (!story.completed) { %>
+    <div class="story_block">
+      <div class="story_block_header">
+        <h4 class="heading">
+          <%= story.title %>
+        </h4>
+        <div class="story_created_by">
+          <div class="contributor"></div>
+          <div>
+            <%= story.author %>
+          </div>
+        </div>
+      </div>
+      <div class="story_snippet_wrapper">
+        <p class="snipped_paragraph">
+          <%= story.snippet %>
+        </p>
+      </div>
+      <a href="/write_story/<%= story.id %>" class="button w-button">Contribute</a>
+    </div>
+    <% } %>
+      <% }); %>

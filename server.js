@@ -1,3 +1,7 @@
+// testing
+const fs = require('fs');
+// testing
+
 // load .env data into process.env
 require('dotenv').config();
 
@@ -36,6 +40,7 @@ const usersRoutes = require('./routes/users');
 const storiesRoutes = require('./routes/stories.js');
 const submissionRoutes = require('./routes/submissions.js');
 const contributionRoutes = require('./routes/contributions.js')
+const write_storyRoutes = require('./routes/write_story.js')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -48,6 +53,7 @@ app.use('/users', usersRoutes);
 app.use('/stories', storiesRoutes);
 app.use('/submissions', submissionRoutes);
 app.use('/contributions', contributionRoutes);
+app.use('/write_story', write_storyRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
@@ -55,9 +61,21 @@ app.use('/contributions', contributionRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+
+
+// *********passing in data straight into index**************
 app.get('/', (req, res) => {
-  res.render('index');
+  fs.readFile('./db/place-holders/stories.json', 'utf8', (err, data) => {
+
+    const stories = JSON.parse(data);
+    res.render('index', { stories });
+  });
 });
+// *********passing in data straight into index**************
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

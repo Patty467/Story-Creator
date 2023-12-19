@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
 // this creates a submission
 router.post('/submission/:id', (req, res) => {
