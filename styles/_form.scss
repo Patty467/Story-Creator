@@ -1,9 +1,19 @@
 textarea {
   width: 100%;
-  min-height: 200px;
   padding: 8px 12px;
   border-radius: 10px;
   border: 1px solid $secondary_color;
+  margin-bottom: 10px;
+  min-height: 4rem;
+}
+
+textarea:focus-visible {
+  outline: none;
+  color: black;
+}
+
+.create_story_content {
+  min-height: 200px;
 }
 
 input {
@@ -11,4 +21,27 @@ input {
   padding: 8px 12px;
   border-radius: 10px;
   border: 1px solid $secondary_color;
+  outline: none;
+}
+
+// create submission form
+
+.form-block {
+  background-color: $block_color;
+  border-radius: 10px;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.form_footer {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.form_header {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  align-items: center;
+  margin-bottom: 10px;
+  display: flex;
 }

@@ -1,0 +1,24 @@
+.button {
+  width: auto;
+  text-align: center;
+  background-color: $button_color;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+}
+
+.button:hover {
+  background-color: $accent_color;
+}
+
+.button.accept_action {
+  background-color: #63bff8;
+}
+
+.button.accept_action:hover {
+  background-color: #009dff;
+}

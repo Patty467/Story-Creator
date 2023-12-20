@@ -1,18 +1,25 @@
 .main_guide {
   width: 25%;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  background-color: #e2e2e2;
+  background-color: #e2e2e21a;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   flex-direction: column;
   padding: 1rem;
   display: flex;
+  color: white;
+}
+
+.main_guide_wrapper {
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 .main_guide_header {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
+  grid-row-gap: .75rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -25,11 +32,17 @@
   font-size: 1.25rem;
 }
 
+.small_title {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .status {
   width: 100%;
   background-color: #63bff8;
   border-radius: 4px;
   padding: 4px;
+  text-align: center;
 }
 
 .status.mark_status {

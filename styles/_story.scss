@@ -1,8 +1,8 @@
 // The hero story
 
 .hero_story {
-  grid-row-gap: 1rem;
-  background-color: #e2e2e2;
+  grid-row-gap: .5rem;
+  background-color: $block_color;
   border-radius: 10px;
   flex-direction: column;
   padding: 1rem;
@@ -34,37 +34,6 @@
   display: flex;
 }
 
-// contributor icons
-
-.contributor {
-  width: 20px;
-  height: 20px;
-  background-color: #ff5656;
-  border-radius: 20px;
-}
-
-.contributor._2 {
-  background-color: #5680ff;
-}
-
-.contributor._3 {
-  background-color: #ffc519;
-}
-
-.contributor._4 {
-  background-color: #72c55b;
-}
-
-.contributor._5 {
-  background-color: #b656ff;
-}
-
-.contributor.hero {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-}
-
 .hero_story_paragraph {
   text-align: left;
   margin-bottom: 0;
@@ -77,74 +46,6 @@
   justify-content: flex-start;
   padding: 0;
   display: flex;
-}
-
-// create submission form
-
-.form-block {
-  background-color: #e2e2e2;
-  border-radius: 10px;
-  margin-bottom: 0;
-  padding: 1rem;
-}
-
-.form_footer {
-  justify-content: flex-end;
-  display: flex;
-}
-
-.form_header {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  align-items: center;
-  margin-bottom: 10px;
-  display: flex;
-}
-
-
-// submission section in story view
-
-.submission {
-  grid-row-gap: 10px;
-  background-color: #e2e2e2;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  display: flex;
-}
-
-.queue_title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.5rem;
-}
-
-.submission_footer {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
-
-.submission_vote {
-  justify-content: space-between;
-  display: flex;
-}
-
-.submission_user {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  align-items: center;
-  display: flex;
-}
-
-.submission_date {
-  font-size: 12px;
-}
-
-.vote_count {
-  width: 2ch;
-  text-align: center;
 }
 
 // explore page "wrapper". Should change the name to .explore_content
@@ -163,7 +64,7 @@
   width: 49%;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-color: #e7e7e7;
+  background-color: $block_color;
   border-radius: 10px;
   flex-direction: column;
   margin-bottom: 2%;
@@ -191,28 +92,12 @@
   margin-bottom: 0;
 }
 
-// buttons
+// hero story contributions
 
-.button {
-  text-align: center;
-  background-color: #b8b8b8;
-  border-radius: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  font-weight: 400;
-}
-
-.button:hover {
-  background-color: #7a7777;
-}
-
-.button.accept_action {
-  background-color: #63bff8;
-}
-
-.button.accept_action:hover {
-  background-color: #009dff;
+.accepted_contribution {
+  grid-row-gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+  display: flex;
 }

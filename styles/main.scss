@@ -5,6 +5,9 @@
 @import './feed';
 @import './guide';
 @import './form';
+@import './buttons';
+@import './submissions';
+@import './contributors';
 
 // styling
 body {
@@ -15,7 +18,13 @@ body {
   justify-content: center;
   align-items: center;
   background: $background_color;
+  background-image: $background_image;
+  background-attachment: fixed;
   font-size: 14px;
+}
+
+p {
+  margin: 0;
 }
 
 .main_content {
@@ -32,4 +41,11 @@ body {
   width: 100%;
   height: 1px;
   background-color: #919191;
+}
+
+.divider_big {
+  width: 100%;
+  height: 1px;
+  background-color: #919191;
+  margin-top: 10px;
 }
