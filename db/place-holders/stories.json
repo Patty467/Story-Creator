@@ -26,5 +26,26 @@
     "author": "User 4",
     "snippet": "Suspendisse varius enim in eros...",
     "completed": true
+  },
+  {
+    "id": 5,
+    "title": "Story 5",
+    "author": "User 2",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": true
+  },
+  {
+    "id": 6,
+    "title": "Story 6",
+    "author": "User 1",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": true
+  },
+  {
+    "id": 7,
+    "title": "Story 7",
+    "author": "User 3",
+    "snippet": "Suspendisse varius enim in eros...",
+    "completed": true
   }
 ]
