@@ -36,11 +36,11 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
-// Our routes
-const storiesRoutes = require('./routes/stories.js');
-const submissionRoutes = require('./routes/submissions.js');
-const contributionRoutes = require('./routes/contributions.js')
-const write_storyRoutes = require('./routes/write_story.js')
+const allStoriesWithUsersApiRoutes = require('./routes/allStoriesWithUsers-api');
+const completedStory = require('./routes/completedStory-api');
+const myStories = require('./routes/myStories-api');
+const storyInformation = require('./routes/storyInformation-api');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -48,12 +48,15 @@ const write_storyRoutes = require('./routes/write_story.js')
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-
-// Our routes
 app.use('/stories', storiesRoutes);
 app.use('/submissions', submissionRoutes);
 app.use('/contributions', contributionRoutes);
 app.use('/write_story', write_storyRoutes);
+
+app.use('/api/allStoriesWithUsers', allStoriesWithUsersApiRoutes);
+app.use('/api/completedStory', completedStory);
+app.use('/api/myStories', myStories);
+app.use('/api/storyInformation', storyInformation);
 
 // Note: mount other resources here, using the same pattern above
 
