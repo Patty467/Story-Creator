@@ -49,7 +49,7 @@ const storyInformation = require('./routes/storyInformation-api');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/stories', storiesRoutes);
+// app.use('/stories', storiesRoutes);
 app.use('/submissions', submissionRoutes);
 app.use('/contributions', contributionRoutes);
 app.use('/write_story', write_storyRoutes);
@@ -66,20 +66,22 @@ app.use('/api/storyInformation', storyInformation);
 // Separate them into separate routes files (see above).
 
 
+// updates
 
+const database = require("./db/database");
 
-// *********passing in data straight into index**************
+const storyRouter = require('./routes/stories');
+
+// show all stories
 app.get('/', (req, res) => {
-  fs.readFile('./db/place-holders/stories.json', 'utf8', (err, data) => {
-
-    const stories = JSON.parse(data);
-    res.render('index', { stories });
-  });
+  database
+    .getAllStories()
+    .then((stories) => res.render('index', { stories }));
 });
-// *********passing in data straight into index**************
 
+app.use('/stories', storyRouter)
 
-
+//
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

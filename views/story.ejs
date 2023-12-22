@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>explore</title>
+  <title>View Story</title>
 
   <!-- from lighthouse -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
@@ -24,21 +24,12 @@
 <body>
 
   <%- include('components/_header') %>
-    <section class="main_content">
-      <h3 class="status_title"><span class="material-symbols-outlined">
-          edit_note
-        </span>Active Stories</h3>
-      <div class="active_content">
-        <%- include('components/_active_story_block', {stories: stories}) %>
-      </div>
-      <div class="divider"></div>
-      <h3 class="status_title"><span class="material-symbols-outlined">
-          task
-        </span>Completed Stories</h3>
-      <div class="active_content">
-        <%- include('components/_completed_story_block', {stories: stories}) %>
-      </div>
-    </section>
+
+    <h1>Story Title</h1>
+    if(!story.complete) {
+    <%= include('components/_submissions_queue') %>
+      }
+
 </body>
 
 </html>

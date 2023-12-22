@@ -1,4 +1,4 @@
-<% stories.forEach(story=> { %>
+<% stories.forEach((story)=> { %>
   <% if (!story.completed) { %>
     <div class="story_block">
       <div class="story_block_header">
@@ -8,16 +8,16 @@
         <div class="story_created_by">
           <div class="contributor"></div>
           <div>
-            <%= story.author %>
+            <%= story.name %>
           </div>
         </div>
       </div>
       <div class="story_snippet_wrapper">
         <p class="snipped_paragraph">
-          <%= story.snippet %>
+          <%= story.content %>
         </p>
       </div>
-      <a href="/write_story/<%= story.id %>" class="button">Contribute</a>
+      <a href="/stories/<%= story.id %>" class="button">Contribute</a>
     </div>
     <% } %>
       <% }); %>

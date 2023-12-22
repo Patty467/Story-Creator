@@ -1,30 +1,18 @@
-//all this is loaded on /stories
-
 const express = require('express');
+const database = require("../db/database");
 const router = express.Router();
 
-// this loads a specific story
-router.get('/story/:id', (req, res) => {
-  res.send("this is a specific story")
+// create new story form
+router.get('/new', (req, res) => {
+  res.send('create new story');
 });
 
-// what does this do?
-router.post('/story/:id', (req, res) => {
-  const newStory = req.body;
-})
 
-// res.send("this will load when you want to create a new story")
-router.get('/create', (req, res) => {
-  res.render('create-story');
-});
-
-router.get('/my-stories', (req, res) => {
-  res.render('my-stories');
-});
-
-router.get('/completed-story', (req, res) => {
-  // res.send("Complete")
-  res.render('completed-story');
+// show specific story
+router.get('/:story_id', (req, res) => {
+  database
+    .getStory(req.params.story_id)
+    .then((story) => res.render('story', { story }));
 });
 
 module.exports = router;
