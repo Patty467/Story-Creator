@@ -31,33 +31,21 @@ app.use(
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
-const storiesRoutes = require('./routes/stories.js');
-const submissionRoutes = require('./routes/submissions.js');
-const contributionRoutes = require('./routes/contributions.js')
-const write_storyRoutes = require('./routes/write_story.js')
-
-const allStoriesWithUsersApiRoutes = require('./routes/allStoriesWithUsers-api');
-const completedStory = require('./routes/completedStory-api');
-const myStories = require('./routes/myStories-api');
-const storyInformation = require('./routes/storyInformation-api');
+const contribution = require('./routes/contributions.js');
+const createStory = require('./routes/createStory-api.js');
+const getStories = require('./routes/getStories-api.js')
+const submission = require('./routes/submissions-api.js');
+const createVote = require('./routes/createVote-api.js')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
-// app.use('/stories', storiesRoutes);
-app.use('/submissions', submissionRoutes);
-app.use('/contributions', contributionRoutes);
-app.use('/write_story', write_storyRoutes);
 
-app.use('/api/allStoriesWithUsers', allStoriesWithUsersApiRoutes);
-app.use('/api/completedStory', completedStory);
-app.use('/api/myStories', myStories);
-app.use('/api/storyInformation', storyInformation);
+app.use('/contribution', contribution);
+app.use('/api/createStories', createStory);
+app.use('/api/getStories', getStories);
+app.use('/api/submission', submission);
+app.use('/api/createVote', createVote);
 
 // Note: mount other resources here, using the same pattern above
 
@@ -65,23 +53,13 @@ app.use('/api/storyInformation', storyInformation);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+const getAllStories = require("./db/queries/getAllStories.js");
 
-// updates
-
-const database = require("./db/database");
-
-const storyRouter = require('./routes/stories');
-
-// show all stories
 app.get('/', (req, res) => {
-  database
+  getAllStories
     .getAllStories()
     .then((stories) => res.render('index', { stories }));
 });
-
-app.use('/stories', storyRouter)
-
-//
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

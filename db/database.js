@@ -20,6 +20,9 @@ const getStory = (storyId) => {
   JOIN users ON stories.users_id = users.id
   WHERE stories.id = $1;
   `, [storyId])
+    .then(data => {
+      return data.rows;
+    });
 };
 
 module.exports = { getAllStories, getStory };

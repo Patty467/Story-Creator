@@ -24,20 +24,11 @@
 <body>
 
   <%- include('components/_header') %>
+
     <section class="main_content">
-      <h3 class="status_title"><span class="material-symbols-outlined">
-          edit_note
-        </span>Active Stories</h3>
-      <div class="active_content">
-        <%- include('components/_active_story_block', {stories: stories}) %>
-      </div>
-      <div class="divider"></div>
-      <h3 class="status_title"><span class="material-symbols-outlined">
-          task
-        </span>Completed Stories</h3>
-      <div class="active_content">
-        <%- include('components/_completed_story_block', {stories: stories}) %>
-      </div>
+
+      <%- include('components/_story_block', {stories: stories}) %>
+
     </section>
 </body>
 
