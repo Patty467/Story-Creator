@@ -2,10 +2,10 @@ const db = require('../connection');
 
 const getStoryInformation = (storyId) => {
   return db.query(`
-    SELECT stories.*, users.*, submissions.* 
-    FROM stories 
-    JOIN users ON stories.user_id = users.id 
-    JOIN submissions ON stories.id = submissions.story_id 
+    SELECT stories.*, users.*, submissions.*
+    FROM stories
+    JOIN users ON stories.users_id = users.id
+    JOIN submissions ON stories.id = submissions.stories_id
     WHERE stories.id = $1;
   `, [storyId])
     .then(data => {
