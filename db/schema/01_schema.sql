@@ -13,7 +13,7 @@ CREATE TABLE stories(
   id serial PRIMARY KEY NOT NULL,
   title varchar(255) NOT NULL,
   content text,
-  completed boolean NOT NULL DEFAULT TRUE,
+  completed boolean NOT NULL DEFAULT FALSE,
   users_id int REFERENCES users(id)
 );
 
@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS submissions CASCADE;
 CREATE TABLE submissions(
   id serial PRIMARY KEY NOT NULL,
   content text,
-  votes integer,
+  votes integer, DEFAULT 0
   active boolean NOT NULL DEFAULT TRUE,
-  accepted boolean NOT NULL DEFAULT TRUE,
+  accepted boolean NOT NULL DEFAULT FALSE,
   users_id integer REFERENCES users(id),
   stories_id integer REFERENCES stories(id)
 );

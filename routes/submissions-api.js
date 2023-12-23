@@ -3,12 +3,15 @@ const router = express.Router();
 const createSubmission = require('../db/queries/createSubmission.js');
 const getSubmission = require('../db/queries/getSubmission.js');
 
-// localhost:8080/submissions/
 // this creates a submission
 router.post('/', (req, res) => {
-  const { submissionContent, storyId } = req.body;
+  const submissionContent = req.body.field;
+  const storyId = req.body.storyId;
   createSubmission.createSubmission(submissionContent, storyId)
-    .then(() => res.redirect('/'))
+    .then(() => {
+      // console.log(submissionContent, storyId);
+      res.redirect('back');
+    })
     .catch(err => res.status(500).json({ error: err.message }));
 });
 

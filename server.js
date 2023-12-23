@@ -32,8 +32,10 @@ app.use(express.static('public'));
 
 // Separated Routes for each Resource
 const contribution = require('./routes/contributions.js');
-const createStory = require('./routes/createStory-api.js');
+const createStoryAPI = require('./routes/createStory-api.js');
+const createStory = require('./routes/createStory.js');
 const getStories = require('./routes/getStories-api.js')
+const myStories = require('./routes/myStories.js')
 const submission = require('./routes/submissions-api.js');
 const createVote = require('./routes/createVote-api.js')
 
@@ -42,8 +44,10 @@ const createVote = require('./routes/createVote-api.js')
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 
 app.use('/contribution', contribution);
-app.use('/api/createStories', createStory);
+app.use('/api/createStories', createStoryAPI);
+app.use('/createStory', createStory);
 app.use('/api/getStories', getStories);
+app.use('/myStories', myStories);
 app.use('/api/submission', submission);
 app.use('/api/createVote', createVote);
 

@@ -1,0 +1,16 @@
+<%
+var usernames = submission.map(function(submission) {
+  return submission.name;
+});
+
+var uniqueUsernames = usernames.filter(function(name, index) {
+  return usernames.indexOf(name) === index;
+});
+%>
+
+<% uniqueUsernames.forEach(function(username) { %>
+  <div class="story_contributors">
+    <div class="contributor _<%= username %>"></div>
+    <div><%= username %></div>
+  </div>
+<% }); %>

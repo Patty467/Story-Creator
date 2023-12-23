@@ -11,22 +11,21 @@ router.get('/new', (req, res) => {
 
 router.get('/:story_id', (req, res) => {
   const storyId = req.params.story_id;
-  console.log("This is the storyId: ", storyId);
 
   Promise.all([
     getStories.getStories(storyId),
     getSubmission.getSubmission(storyId)
   ])
     .then(([stories, submission]) => {
-      console.log('Stories:', stories);
-      console.log('Submission:', submission);
+      // console.log('Stories:', stories);
+      // console.log('Submission:', submission);
       res.render('story', { stories, submission });
     })
     .catch((error) => {
       console.error("An error occurred:", error);
       res.status(500).send("Internal Server Error");
     });
-});
+  });
 
 module.exports = router;
 

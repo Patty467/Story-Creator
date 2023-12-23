@@ -1,0 +1,11 @@
+<% submission.sort(function(a, b) { return a.id - b.id; }).forEach(function(submission) { %>
+  <% if (submission.accepted) { %>
+    <div class="accepted_contribution">
+      <div class="submission_user">
+        <div class="contributor _<%= submission.userId %>"></div>
+        <div><%= submission.name %></div>
+      </div>
+      <p class="hero_story_paragraph"><%= submission.content %></p>
+    </div>
+  <% } %>
+<% }); %>
