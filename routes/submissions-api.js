@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const createSubmission = require('../db/queries/createSubmission.js');
-const getSubmission = require('../db/queries/getSubmission.js');
+const getSubmissions = require('../db/queries/getSubmission.js');
 
 // this creates a submission
 router.post('/', (req, res) => {
@@ -15,14 +15,21 @@ router.post('/', (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
-// this loads a specific submission
-// localhost:8080/submissions/:id
-router.get('/:submissions_id', (req, res) => {
-  const { submissionId } = req.body;
-  getSubmission.getSubmission(submissionId)
+// this loads submissions by storyId
+router.get('/:story_id', (req, res) => {
+  const storyId = req.params.story_id;
+  getSubmissions.getSubmissions(storyId)
     .then(() => res.redirect('/'))
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
+
+
+// router.get('/:submissions_id', (req, res) => {
+//   const { submissionId } = req.body;
+//   getSubmission.getSubmission(submissionId)
+//     .then(() => res.redirect('/'))
+//     .catch(err => res.status(500).json({ error: err.message }));
+// });
 
 module.exports = router;

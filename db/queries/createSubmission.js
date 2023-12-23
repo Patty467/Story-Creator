@@ -7,6 +7,10 @@ const createSubmission = async (submissionContent, storyId) => {
 
   console.log('Inserting data:', { id: newId, content: submissionContent, stories_id: storyId, users_id: 5 });
 
+
+
+  // ---- the user is hard-coded right now ----
+
   return db.query(`
     INSERT INTO submissions (id, content, stories_id, users_id) VALUES ($1, $2, $3, 5)
   `, [newId, submissionContent, storyId])

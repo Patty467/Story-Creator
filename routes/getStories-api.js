@@ -1,6 +1,6 @@
 const express = require('express');
 const getStories = require("../db/queries/getStories");
-const getSubmission = require("../db/queries/getSubmission");
+const getSubmissions = require("../db/queries/getSubmission");
 const router = express.Router();
 
 // create new story form
@@ -14,12 +14,12 @@ router.get('/:story_id', (req, res) => {
 
   Promise.all([
     getStories.getStories(storyId),
-    getSubmission.getSubmission(storyId)
+    getSubmissions.getSubmissions(storyId)
   ])
-    .then(([stories, submission]) => {
+    .then(([stories, submissions]) => {
       // console.log('Stories:', stories);
       // console.log('Submission:', submission);
-      res.render('story', { stories, submission });
+      res.render('story', { stories, submissions });
     })
     .catch((error) => {
       console.error("An error occurred:", error);

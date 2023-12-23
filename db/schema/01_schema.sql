@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS submissions CASCADE;
 CREATE TABLE submissions(
   id serial PRIMARY KEY NOT NULL,
   content text,
-  votes integer, DEFAULT 0
+  votes integer NOT NULL DEFAULT 0,
   active boolean NOT NULL DEFAULT TRUE,
   accepted boolean NOT NULL DEFAULT FALSE,
   users_id integer REFERENCES users(id),

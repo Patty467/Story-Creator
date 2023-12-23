@@ -8,7 +8,7 @@ const getStories = (storyId) => {
       WHERE stories.id = $1
     `, [storyId])
     .then(data => {
-      console.log('Data:', data.rows);
+      // console.log('Data:', data.rows);
       return data.rows;
     });
 };

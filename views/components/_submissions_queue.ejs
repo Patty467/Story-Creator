@@ -4,8 +4,9 @@
   <h1 class="queue_title">Next addition queue</h1>
 
   <!-- form to make a submission -->
+
   <div class="form-block">
-    <form action="/api/submission" method="POST">
+    <form action="/api/submissions" method="POST">
       <div class="form_header">
         <div class="contributor _5"></div>
         <div>Logged-in User</div>
@@ -20,7 +21,8 @@
   </div>
 
   <!-- submission -->
-  <% submission.sort((a, b)=> b.votes - a.votes).forEach((submission)=> { %>
+
+  <% submissions.sort((a, b)=> b.votes - a.votes).forEach((submission)=> { %>
     <% if (!submission.accepted && submission.active) { %>
       <div class="submission">
         <div class="submission_user">
@@ -35,9 +37,13 @@
         <div class="divider"></div>
         <div class="submission_footer">
           <div class="submission_vote">
-            <span class="material-symbols-outlined">
-              keyboard_arrow_up
-            </span>
+            <form action="/api/createVote/<%= submission.id %>" method="POST">
+              <input type="hidden">
+              <button type="submit" class="material-symbols-outlined" 
+              style="border: none; background: none; padding: 0; cursor: pointer; outline: none;">
+                keyboard_arrow_up
+              </button>
+            </form>
             <div class="vote_count">
               <%= submission.votes %>
             </div>
@@ -49,4 +55,7 @@
       </div>
       <% } %>
         <% }); %>
+
+
+
 </div>

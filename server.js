@@ -36,7 +36,7 @@ const createStoryAPI = require('./routes/createStory-api.js');
 const createStory = require('./routes/createStory.js');
 const getStories = require('./routes/getStories-api.js')
 const myStories = require('./routes/myStories.js')
-const submission = require('./routes/submissions-api.js');
+const submissions = require('./routes/submissions-api.js');
 const createVote = require('./routes/createVote-api.js')
 
 // Mount all resource routes
@@ -48,7 +48,7 @@ app.use('/api/createStories', createStoryAPI);
 app.use('/createStory', createStory);
 app.use('/api/getStories', getStories);
 app.use('/myStories', myStories);
-app.use('/api/submission', submission);
+app.use('/api/submissions', submissions);
 app.use('/api/createVote', createVote);
 
 // Note: mount other resources here, using the same pattern above

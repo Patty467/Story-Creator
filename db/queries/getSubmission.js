@@ -1,8 +1,8 @@
 const db = require('../connection');
 
-const getSubmission = (storyId) => {
+const getSubmissions = (storyId) => {
   return db.query(`
-      SELECT submissions.*, users.name
+      SELECT submissions.id AS submission_id, submissions.*, users.name
       FROM submissions
       JOIN users ON submissions.users_id = users.id
       WHERE stories_id = $1
@@ -12,5 +12,4 @@ const getSubmission = (storyId) => {
       return data.rows;
     });
 };
-
-module.exports = { getSubmission };
+module.exports = { getSubmissions };
