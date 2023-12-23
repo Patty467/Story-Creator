@@ -12,7 +12,7 @@
       </div>
       <textarea placeholder="Insert Submission" maxlength="5000" id="field" name="field" data-name="Field"
         class="textarea"></textarea>
-      <input type="hidden" name="storyId" value= <%= stories[0].id %>
+      <input type="hidden" name="storyId" value=<%=stories[0].id %>>
       <div class="form_footer">
         <input type="submit" value="Submit" data-wait="Please wait..." class="button">
       </div>
@@ -20,7 +20,7 @@
   </div>
 
   <!-- submission -->
-  <% submission.sort((a, b) => b.votes - a.votes).forEach((submission)=> { %>
+  <% submission.sort((a, b)=> b.votes - a.votes).forEach((submission)=> { %>
     <% if (!submission.accepted && submission.active) { %>
       <div class="submission">
         <div class="submission_user">
@@ -48,5 +48,5 @@
         </div>
       </div>
       <% } %>
-<% }); %>
+        <% }); %>
 </div>
