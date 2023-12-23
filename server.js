@@ -9,6 +9,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const session = require('express-session');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -20,6 +21,14 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+
+// express-session middleware
+app.use(session({
+  secret: 'your secret key',
+  resave: false,
+  saveUninitialized: true,
+}));
+
 app.use(
   '/styles',
   sassMiddleware({
@@ -37,7 +46,8 @@ const createStory = require('./routes/createStory.js');
 const getStories = require('./routes/getStories-api.js')
 const myStories = require('./routes/myStories.js')
 const submissions = require('./routes/submissions-api.js');
-const createVote = require('./routes/createVote-api.js')
+const createVote = require('./routes/createVote-api.js');
+const login = require('./routes/login.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -50,6 +60,7 @@ app.use('/api/getStories', getStories);
 app.use('/myStories', myStories);
 app.use('/api/submissions', submissions);
 app.use('/api/createVote', createVote);
+app.use('/login', login);
 
 // Note: mount other resources here, using the same pattern above
 
@@ -60,9 +71,11 @@ app.use('/api/createVote', createVote);
 const getAllStories = require("./db/queries/getAllStories.js");
 
 app.get('/', (req, res) => {
+  const username = req.session.user ? req.session.user.name : 'Not logged in';
+  console.log(username)
   getAllStories
     .getAllStories()
-    .then((stories) => res.render('index', { stories }));
+    .then((stories) => res.render('index', { stories, username }));
 });
 
 app.listen(PORT, () => {

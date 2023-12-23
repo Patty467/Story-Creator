@@ -11,6 +11,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:story_id', (req, res) => {
   const storyId = req.params.story_id;
+  const username = req.session.user ? req.session.user.name : 'Not logged in';
 
   Promise.all([
     getStories.getStories(storyId),
@@ -19,7 +20,7 @@ router.get('/:story_id', (req, res) => {
     .then(([stories, submissions]) => {
       // console.log('Stories:', stories);
       // console.log('Submission:', submission);
-      res.render('story', { stories, submissions });
+      res.render('story', { stories, submissions, username });
     })
     .catch((error) => {
       console.error("An error occurred:", error);
