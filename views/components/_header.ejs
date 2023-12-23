@@ -6,13 +6,28 @@
     </span>
   </div>
   <div class="nav_links_wrapper">
-    <span class="nav_link">User: <%= username %></span>
-    <form action="/login" method="POST" id="loginForm">
-      <input type="text" name="username" placeholder="Username" id="usernameInput">
-      <button type="submit">Log in</button>
-    </form>
+
+    <div class="user_wrapper">
+      <div class="user_info">
+        <span class="material-symbols-outlined">
+          person
+        </span>
+        <span class="user_name">
+          <%= username %>
+        </span>
+      </div>
+      <div class="login_form_wrapper">
+        <form action="/login" method="POST" id="loginForm">
+          <input class="user_input" type="text" name="username" placeholder="Username" id="usernameInput">
+          <button class="user_submit" type="submit">Log in</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="vertical_divider"></div>
     <a href="/" class="nav_link">explore</a>
     <a href="/myStories" class="nav_link">my stories</a>
     <a href="/createStory" class="nav_button">create</a>
+
   </div>
 </nav>

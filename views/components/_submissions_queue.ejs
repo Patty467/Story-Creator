@@ -26,7 +26,7 @@
     <% if (!submission.accepted && submission.active) { %>
       <div class="submission">
         <div class="submission_user">
-          <div class="contributor _2"></div>
+          <div class="contributor _<%= submission.users_id %>"></div>
           <div>
             <%= submission.name %>
           </div>
@@ -39,8 +39,8 @@
           <div class="submission_vote">
             <form action="/api/createVote/<%= submission.id %>" method="POST">
               <input type="hidden">
-              <button type="submit" class="material-symbols-outlined" 
-              style="border: none; background: none; padding: 0; cursor: pointer; outline: none;">
+              <button type="submit" class="material-symbols-outlined"
+                style="border: none; background: none; padding: 0; cursor: pointer; outline: none;">
                 keyboard_arrow_up
               </button>
             </form>
