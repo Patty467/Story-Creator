@@ -34,3 +34,8 @@ INSERT INTO submissions(id, content, votes, active, accepted, users_id, stories_
     replaced by the rustle of wind through endless plains of alphabet flowers, each petal blooming with secrets,
     waiting to be plucked and woven into new worlds. Alice, a grin etched like sunshine on her face, reached for the first,
     ready to paint her own reality, petal by vibrant petal', 10, FALSE, TRUE, 1, 4);
+
+-- INSERT INTO submissions(id, content, votes, active, accepted, users_id, stories_id)
+--   VALUES (51, "submission 1", 100, TRUE, FALSE, 11, 1),
+-- (52, "submission 1", 100, TRUE, FALSE, 12, 2),
+-- (53, "submission 1", 100, TRUE, FALSE, 13, 3);

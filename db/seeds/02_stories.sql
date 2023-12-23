@@ -31,18 +31,14 @@ INSERT INTO stories(id, title, content, completed, users_id)
   -- Completed stories
 (5, 'Duck-Duck, The Duck', 'Duck-Duck, the Duck, wasn''t like the other ducks. While his buddies bobbed merrily on the pond, quacking away about worms and puddles,
   Duck-Duck dreamed of loftier things. He yearned to dance on clouds, sing with the stars, and fly beyond the horizon.
-
   Every morning, as the sun painted the sky with gentle orange and pink, Duck-Duck would flap his tiny wings as hard as he could,
   hoping to catch a breeze and lift him into the air. But all he managed was a hilarious, duck-bottomed shuffle across the water,
   sending ripples bouncing and his siblings into fits of giggles.
-
   One day, a wise old goose with feathers like fluffy snow saw Duck-Duck''s persistent flapping. "Little one," he honked kindly,
   "you can''t fly with ordinary wings. You need wings of dreams, woven from moonlight and wishes."
-
   Intrigued, Duck-Duck spent that night gazing at the moon, whispering his greatest dreams into the cool night air.
   As the first rays of dawn kissed the water, he felt a strange fluttering in his chest. He looked down and gasped.
   There, nestled against his heart, were two shimmering wings, like spun moonlight and stardust!
-
   With a joyous quack, Duck-Duck unfurled his wings and took to the sky. He danced with the clouds, sang with the stars,
   and soared beyond the horizon, his dreams finally taking flight. And though he always returned to the pond,
   sharing stories of his adventures with his siblings, Duck-Duck, the Duck, never forgot the wise goose''s words:
@@ -52,19 +48,16 @@ INSERT INTO stories(id, title, content, completed, users_id)
   My name''s Lil'' Jazzy, streetwise and smooth, but my life wasn''t all sunshine and parkway jams. My pops, bless his soul,
   got caught in a jam, a bad one, the kind with sirens and orange jumpsuits. So it was Uncle Phil, big and rich, who stepped in,
   whisking me away from the concrete jungle to the gated paradise of Bel-Air.
-
   Now, Bel-Air ain''t Philly. It''s mansions and manicured lawns, fancy cars and caviar breakfasts.
   My cousins, Carlton and Hilary, were like polished ponies, all rules and etiquette, while I was a dust bunny,
   tracking grime across their white carpets. We clashed like cymbals and a kazoo, me with my slang and street smarts,
   them with their stuffy manners and opera nights. But hey, opposites attract, right? We learned from each other,
   Carlton loosening up a bit, me learning to hold a fork without stabbing the tablecloth.
-
   Bel-Air wasn''t Philly, but it became my home. I learned to play polo on the polo field, mastered the art of the perfect topiary trim,
   and even impressed Aunt Vivian with my freestyle rap skills at her charity gala. Sure, there were bumps along the way,
   culture clashes and misunderstandings, but we were a family, a motley crew of misfits who found harmony in the most unexpected places.
   And maybe, just maybe, this fresh prince of Bel-Air had found his kingdom, not in a swanky mansion,
   but in the hearts of the people who filled it with laughter, love, and the occasional rap battle.
-
   In the end, it wasn''t about the fancy cars or the caviar breakfasts. It was about finding your place, your tribe,
   your own version of Bel-Air. And somewhere, between the manicured lawns and the concrete jungle, I found mine.', TRUE, 1),
 (7, 'The Case of the Crumb Caper: One Duck Detective''s Quacking Adventure', 'Beatrice Beefeater, duck detective extraordinaire, wasn''t your average puddle pouncer.
@@ -72,24 +65,29 @@ INSERT INTO stories(id, title, content, completed, users_id)
   Beatrice yearned for a life of trenchcoats (well, repurposed tea cozies) and magnifying glasses
   (fashioned from a discarded contact lens). Her dreams were filled with shadowy figures, stolen worms,
   and quacking pronouncements of "The case is cracked!"
-
   One sunny afternoon, a frantic mallard waddled up, beak trembling. His precious stash of breadcrumbs,
   meticulously collected from discarded sandwiches, had vanished! Beatrice, her ducky antennae twitching with intrigue,
   donned her tea cozy trenchcoat and grabbed her contact lens monocle. "Fear not, fowl friend," she declared,
   puffing out her chest (which mostly just ruffled her feathers). "Beatrice Beefeater is on the case!"
-
   Her investigation was, well, unique. She interrogated grumpy catfish,
   who mumbled through gulps of algae about suspicious bread crumbs floating suspiciously by their lair.
   She followed a trail of crumbs (which ended abruptly in a hungry duckling''s belly) and examined footprints
   (mostly just webbed imprints leading in every direction).
-
   Finally, Beatrice stubbed her foot (again) on a discarded baguette crust. Underneath, a beady eye peered out.
   It was Humphrey, the pond bully, notorious for his insatiable appetite and questionable table manners.
   He confessed to the breadcrumb heist, pleading temporary insanity brought on by too much pond scum.
-
   Beatrice, magnanimous even in the face of stolen snacks, declared the case closed.
   Humphrey, in a rare moment of generosity, offered Beatrice a particularly juicy worm as a reward.
   As she savored her detective''s fee, Beatrice couldn''t help but think, maybe duck detective wasn''t
   all glamorous trenchcoats and dramatic reveals. But then again, who could resist a hero who solved crimes
   with a contact lens monocle and a penchant for tripping over crusty bread? In the wacky world of the pond,
   Beatrice Beefeater, the clumsiest, most breadcrumb-obsessed detective around, was just the duck for the job.', TRUE, 3);
+
+-- INSERT INTO stories(id, title, content, completed, users_id)
+--   VALUES (1, "story 1", "story 1 content", FALSE, 11),
+-- (2, "story 2", "story 2 content", FALSE, 12),
+-- (3, "story 3", "story 3 content", FALSE, 13),
+-- (4, "story 4", "story 4 content", FALSE, 14),
+-- (5, "story 5", "story 5 content", FALSE, 15),
+-- (6, "story 6", "story 6 content", TRUE, 16),
+-- (7, "story 7", "story 7 content", TRUE, 17);
