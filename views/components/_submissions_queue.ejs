@@ -7,13 +7,12 @@
 
   <div class="form-block">
     <form action="/api/submissions" method="POST">
-      <div class="form_header">
-        <div class="contributor _5"></div>
-        <div>Logged-in User</div>
+      <div class="form_header">  
       </div>
       <textarea placeholder="Insert Submission" maxlength="5000" id="field" name="field" data-name="Field"
         class="textarea"></textarea>
-      <input type="hidden" name="storyId" value=<%=stories[0].id %>>
+      <input type="hidden" name="storyId" value="<%=stories[0].id %>">
+      <input type="hidden" name="username" value="<%= username %>">
       <div class="form_footer">
         <input type="submit" value="Submit" data-wait="Please wait..." class="button">
       </div>
@@ -50,12 +49,15 @@
             <span class="material-symbols-outlined">
               keyboard_arrow_down
             </span>
+            <% if (username === stories[0].name) { %>
+              <form action="/api/acceptSubmission/<%= submission.id %>" method="POST">
+                <button type="submit" class="your-button-class">accept</button>
+              </form>
+            <% } %>
           </div>
         </div>
       </div>
       <% } %>
         <% }); %>
-
-
 
 </div>

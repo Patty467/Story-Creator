@@ -43,11 +43,13 @@ app.use(express.static('public'));
 const contribution = require('./routes/contributions.js');
 const createStoryAPI = require('./routes/createStory-api.js');
 const createStory = require('./routes/createStory.js');
-const getStories = require('./routes/getStories-api.js')
-const myStories = require('./routes/myStories.js')
+const getStories = require('./routes/getStories-api.js');
+const myStories = require('./routes/myStories.js');
 const submissions = require('./routes/submissions-api.js');
 const createVote = require('./routes/createVote-api.js');
 const login = require('./routes/login.js');
+const acceptSubmission = require('./routes/acceptSubmission.js');
+const completeStory = require('./routes/completeStory.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -61,6 +63,8 @@ app.use('/myStories', myStories);
 app.use('/api/submissions', submissions);
 app.use('/api/createVote', createVote);
 app.use('/login', login);
+app.use('/api/acceptSubmission', acceptSubmission);
+app.use('/api/completeStory', completeStory);
 
 // Note: mount other resources here, using the same pattern above
 
