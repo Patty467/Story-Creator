@@ -28,7 +28,9 @@
 
       <!-- left hand side guide -->
       <div class="main_guide">
+
         <div class="main_guide_wrapper">
+
           <div class="main_guide_header">
             <div class="created_by_wrapper">
               <div class="main_user">
@@ -44,17 +46,26 @@
               </div>
             </div>
           </div>
-          <% if (username === stories[0].name) { %>
-            <form action="/api/completeStory/<%= stories[0].id %>" method="POST">
-              <button type="submit" class="your-button-class">Complete Story</button>
-            </form>
-          <% } %>
+
+          <div class="main_guide_action">
+            <% if (username===stories[0].name && stories[0].completed !==true) { %>
+              <div class="status mark_status">
+
+                <form action="/api/completeStory/<%= stories[0].id %>" method="POST">
+                  <button type="submit" class="mark_story_button">Mark Complete</button>
+                </form>
+              </div>
+              <% } %>
+          </div>
+
           <div class="main_guide_contributors">
             <div class="small_title">Contributing Authors</div>
             <div class="divider"></div>
             <%- include('components/_story_contributor') %>
           </div>
+
         </div>
+
       </div>
 
       <!-- right hand side feed -->

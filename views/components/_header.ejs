@@ -7,21 +7,27 @@
   </div>
   <div class="nav_links_wrapper">
 
-    <div class="user_wrapper">
-      <div class="user_info">
-        <span class="material-symbols-outlined">
-          person
-        </span>
-        <span class="user_name">
-          <%= username %>
-        </span>
+    <div class="dropdown">
+
+      <button class="dropdown-btn" onclick="toggleDropdown()">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+
+      <span class="user_name">
+        <%= username %>
+      </span>
+
+      <div class="dropdown-content">
+
+        <div class="login_form_wrapper">
+          <form action="/login" method="POST" id="loginForm">
+            <input class="user_input" type="text" name="username" placeholder="Username" id="usernameInput">
+            <button class="user_submit" type="submit">Log in</button>
+          </form>
+        </div>
+
       </div>
-      <div class="login_form_wrapper">
-        <form action="/login" method="POST" id="loginForm">
-          <input class="user_input" type="text" name="username" placeholder="Username" id="usernameInput">
-          <button class="user_submit" type="submit">Log in</button>
-        </form>
-      </div>
+
     </div>
 
     <div class="vertical_divider"></div>
@@ -31,3 +37,24 @@
 
   </div>
 </nav>
+
+<script>
+  function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+  }
+
+  // Close dropdown
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      var dropdowns = document.getElementsByClassName('dropdown-content');
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show') && !event.target.closest('.dropdown-content')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
+
+</script>

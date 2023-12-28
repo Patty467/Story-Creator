@@ -3,8 +3,8 @@ const router = express.Router();
 const getAllStories = require("../db/queries/getAllStories.js");
 
 router.get('/', (req, res) => {
-  const username = req.session.user ? req.session.user.name : 'Not logged in';
-    getAllStories.getAllStories()
+  const username = req.session.user ? req.session.user.name : '';
+  getAllStories.getAllStories()
     .then((stories) => res.render('myStories', { stories, username }));
 });
 

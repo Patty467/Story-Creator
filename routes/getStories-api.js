@@ -11,7 +11,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:story_id', (req, res) => {
   const storyId = req.params.story_id;
-  const username = req.session.user ? req.session.user.name : 'Not logged in';
+  const username = req.session.user ? req.session.user.name : '';
 
   Promise.all([
     getStories.getStories(storyId),
@@ -26,7 +26,7 @@ router.get('/:story_id', (req, res) => {
       console.error("An error occurred:", error);
       res.status(500).send("Internal Server Error");
     });
-  });
+});
 
 module.exports = router;
 

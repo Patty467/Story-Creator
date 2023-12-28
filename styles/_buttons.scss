@@ -22,3 +22,36 @@
 .button.accept_action:hover {
   background-color: #009dff;
 }
+
+.accept_button {
+  width: auto;
+  text-align: center;
+  background-color: $button_color;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  border: none;
+}
+
+.accept_button:hover {
+  background-color: $accent_color;
+}
+
+.mark_story_button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}

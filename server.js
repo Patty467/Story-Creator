@@ -50,6 +50,7 @@ const createVote = require('./routes/createVote-api.js');
 const login = require('./routes/login.js');
 const acceptSubmission = require('./routes/acceptSubmission.js');
 const completeStory = require('./routes/completeStory.js');
+const downVote = require('./routes/downVote-api.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -65,17 +66,17 @@ app.use('/api/createVote', createVote);
 app.use('/login', login);
 app.use('/api/acceptSubmission', acceptSubmission);
 app.use('/api/completeStory', completeStory);
+app.use('/api/downVote', downVote);
 
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
 const getAllStories = require("./db/queries/getAllStories.js");
 
 app.get('/', (req, res) => {
-  const username = req.session.user ? req.session.user.name : 'Not logged in';
+  const username = req.session.user ? req.session.user.name : '';
   console.log(username)
   getAllStories
     .getAllStories()

@@ -7,7 +7,7 @@
 
   <div class="form-block">
     <form action="/api/submissions" method="POST">
-      <div class="form_header">  
+      <div class="form_header">
       </div>
       <textarea placeholder="Insert Submission" maxlength="5000" id="field" name="field" data-name="Field"
         class="textarea"></textarea>
@@ -36,28 +36,55 @@
         <div class="divider"></div>
         <div class="submission_footer">
           <div class="submission_vote">
-            <form action="/api/createVote/<%= submission.id %>" method="POST">
-              <input type="hidden">
-              <button type="submit" class="material-symbols-outlined"
-                style="border: none; background: none; padding: 0; cursor: pointer; outline: none;">
-                keyboard_arrow_up
-              </button>
-            </form>
-            <div class="vote_count">
+            <button class="material-symbols-outlined" onclick="upVote(<%= submission.id %>)">
+              keyboard_arrow_up
+            </button>
+            <div class="vote_count" id="vote-count-<%= submission.id %>">
               <%= submission.votes %>
             </div>
-            <span class="material-symbols-outlined">
+            <button class="material-symbols-outlined" onclick="downVote(<%= submission.id %>)">
               keyboard_arrow_down
-            </span>
-            <% if (username === stories[0].name) { %>
-              <form action="/api/acceptSubmission/<%= submission.id %>" method="POST">
-                <button type="submit" class="your-button-class">accept</button>
-              </form>
-            <% } %>
+            </button>
           </div>
+          <div class="submission_accept_wrapper">
+            <% if (username===stories[0].name) { %>
+              <form action="/api/acceptSubmission/<%= submission.id %>" method="POST">
+                <button type="submit" class="accept_button">accept</button>
+              </form>
+              <% } %>
+          </div>
+
         </div>
       </div>
       <% } %>
         <% }); %>
 
 </div>
+
+<script>
+  function upVote(submissionId) {
+    const url = `/api/createVote/${submissionId}`;
+    fetch(url, { method: 'POST' }).then(() => {
+      updateVoteCount('up', submissionId);
+    });
+  }
+
+  function downVote(submissionId) {
+    const url = `/api/downVote/${submissionId}`;
+    fetch(url, { method: 'POST' }).then(() => {
+      updateVoteCount('down', submissionId);
+    })
+  }
+
+  function updateVoteCount(direction, submissionId) {
+    const voteCountEl = document.getElementById(`vote-count-${submissionId}`);
+    if (voteCountEl) {
+      const count = parseInt(voteCountEl.innerText);
+      if (direction === 'up') {
+        voteCountEl.innerText = count + 1;
+      } else {
+        voteCountEl.innerText = count - 1;
+      }
+    }
+  }
+</script>
