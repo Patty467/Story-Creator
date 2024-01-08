@@ -82,12 +82,3 @@ INSERT INTO stories(id, title, content, completed, users_id)
   all glamorous trenchcoats and dramatic reveals. But then again, who could resist a hero who solved crimes
   with a contact lens monocle and a penchant for tripping over crusty bread? In the wacky world of the pond,
   Beatrice Beefeater, the clumsiest, most breadcrumb-obsessed detective around, was just the duck for the job.', TRUE, 3);
-
--- INSERT INTO stories(id, title, content, completed, users_id)
---   VALUES (1, "story 1", "story 1 content", FALSE, 11),
--- (2, "story 2", "story 2 content", FALSE, 12),
--- (3, "story 3", "story 3 content", FALSE, 13),
--- (4, "story 4", "story 4 content", FALSE, 14),
--- (5, "story 5", "story 5 content", FALSE, 15),
--- (6, "story 6", "story 6 content", TRUE, 16),
--- (7, "story 7", "story 7 content", TRUE, 17);

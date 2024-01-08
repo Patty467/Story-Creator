@@ -18,8 +18,6 @@ router.get('/:story_id', (req, res) => {
     getSubmissions.getSubmissions(storyId)
   ])
     .then(([stories, submissions]) => {
-      // console.log('Stories:', stories);
-      // console.log('Submission:', submission);
       res.render('story', { stories, submissions, username });
     })
     .catch((error) => {
