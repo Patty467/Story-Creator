@@ -57,10 +57,9 @@
 }
 
 .quick_jump_wrapper {
-  position: absolute;
-  top: 128px;
-  left: 15%;
-  height: 100%;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
   width: 100px;
 }
 
