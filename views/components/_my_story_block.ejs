@@ -1,65 +1,69 @@
-<!-- active stories -->
-<h3 id="active_stories" class="status_title">
-  <span class="material-symbols-outlined"> edit_note</span>
-  My Active Stories
-</h3>
+<div class="feed_wrapper">
+  <div class="story_block_feed">
+    <!-- active stories -->
+    <h3 id="active_stories" class="status_title">
+      <span class="material-symbols-outlined"> edit_note</span>
+      My Active Stories
+    </h3>
 
-<div class="active_content">
-  <% stories.forEach((story)=> { %>
-    <% if (!story.completed && story.name===username) { %>
+    <div class="active_content">
+      <% stories.forEach((story)=> { %>
+        <% if (!story.completed && story.name===username) { %>
 
-      <div class="story_block">
-        <div class="story_block_header">
-          <h4 class="heading">
-            <%= story.title %>
-          </h4>
-          <div class="story_created_by">
-            <div class="contributor _<%=story.userid%>"></div>
-            <div>
-              <%= story.name %>
+          <div class="story_block">
+            <div class="story_block_header">
+              <h4 class="heading">
+                <%= story.title %>
+              </h4>
+              <div class="story_created_by">
+                <div class="contributor _<%=story.userid%>"></div>
+                <div>
+                  <%= story.name %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="story_snippet_wrapper">
-          <p class="snipped_paragraph">
-            <%= story.content %>
-          </p>
-        </div>
-        <a href="/api/getStories/<%= story.id %>" class="button">Contribute</a>
-      </div>
-      <% } %>
-        <% }); %>
-</div>
-
-<!-- completed stories -->
-<h3 id="completed_stories" class="status_title">
-  <span class="material-symbols-outlined">
-    task</span>
-  My Completed Stories
-</h3>
-
-<div class="active_content">
-  <% stories.forEach((story)=> { %>
-    <% if (story.completed && story.name===username) { %>
-      <div class="story_block">
-        <div class="story_block_header">
-          <h4 class="heading">
-            <%= story.title %>
-          </h4>
-          <div class="story_created_by">
-            <div class="contributor _<%=story.userid%>"></div>
-            <div>
-              <%= story.name %>
+            <div class="story_snippet_wrapper">
+              <p class="snipped_paragraph">
+                <%= story.content %>
+              </p>
             </div>
+            <a href="/api/getStories/<%= story.id %>" class="button">Contribute</a>
           </div>
-        </div>
-        <div class="story_snippet_wrapper">
-          <p class="snipped_paragraph">
-            <%= story.content %>
-          </p>
-        </div>
-        <a href="/api/getStories/<%= story.id %>" class="button">Read</a>
-      </div>
-      <% } %>
-        <% }); %>
+          <% } %>
+            <% }); %>
+    </div>
+
+    <!-- completed stories -->
+    <h3 id="completed_stories" class="status_title">
+      <span class="material-symbols-outlined">
+        task</span>
+      My Completed Stories
+    </h3>
+
+    <div class="active_content">
+      <% stories.forEach((story)=> { %>
+        <% if (story.completed && story.name===username) { %>
+          <div class="story_block">
+            <div class="story_block_header">
+              <h4 class="heading">
+                <%= story.title %>
+              </h4>
+              <div class="story_created_by">
+                <div class="contributor _<%=story.userid%>"></div>
+                <div>
+                  <%= story.name %>
+                </div>
+              </div>
+            </div>
+            <div class="story_snippet_wrapper">
+              <p class="snipped_paragraph">
+                <%= story.content %>
+              </p>
+            </div>
+            <a href="/api/getStories/<%= story.id %>" class="button">Read</a>
+          </div>
+          <% } %>
+            <% }); %>
+    </div>
+  </div>
 </div>
