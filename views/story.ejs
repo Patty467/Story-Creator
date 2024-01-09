@@ -34,7 +34,7 @@
           <div class="main_guide_header">
             <div class="created_by_wrapper">
               <div class="main_user">
-                <div class="contributor hero"></div>
+                <div class="contributor _<%=stories[0].users_id%>"></div>
                 <div>
                   <%= stories[0].name %>
                 </div>
@@ -87,9 +87,11 @@
         </div>
 
         <!-- submissions  -->
-        <% if (!stories[0].completed) { %>
-          <%- include('components/_submissions_queue') %>
-            <% } %>
+        <% if (typeof username !== 'undefined' && username) { %>
+          <% if (!stories[0].completed) { %>
+            <%- include('components/_submissions_queue') %>
+              <% } %>
+        <% } %>
 
       </div>
 

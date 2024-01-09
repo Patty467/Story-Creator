@@ -32,8 +32,10 @@
 
     <div class="vertical_divider"></div>
     <a href="/" class="nav_link">explore</a>
-    <a href="/myStories" class="nav_link">my stories</a>
-    <a href="/createStory" class="nav_button">create</a>
+    <% if (typeof username !== 'undefined' && username) { %>
+      <a href="/myStories" class="nav_link">my stories</a>
+      <a href="/createStory" class="nav_button">create</a>
+    <% } %>
 
   </div>
 </nav>

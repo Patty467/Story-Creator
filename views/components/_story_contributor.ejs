@@ -1,11 +1,11 @@
-<% var usernames=submissions.map(function(submission) { return submission.name; }); %>
-  <% var uniqueUsernames=usernames.filter(function(name, index) { return usernames.indexOf(name)===index; }); %>
+<% var users=submissions.filter(function(submission) { return submission.accepted; }).map(function(submission) { return { name: submission.name, id: submission.users_id }; }); %>
+<% var uniqueUsers=users.filter(function(user, index, self) { return index === self.findIndex((t) => (t.name === user.name && t.id === user.id)) }); %>
 
-    <% uniqueUsernames.forEach(function(username) { %>
-      <div class="story_contributors">
-        <div class="contributor _<%= username.userid %>"></div>
-        <div>
-          <%= username %>
-        </div>
-      </div>
-      <% }); %>
+<% uniqueUsers.forEach(function(user) { %>
+  <div class="story_contributors">
+    <div class="contributor _<%= user.id %>"></div>
+    <div>
+      <%= user.name %>
+    </div>
+  </div>
+<% }); %>
