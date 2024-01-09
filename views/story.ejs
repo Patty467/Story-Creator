@@ -31,6 +31,12 @@
 
         <div class="main_guide_wrapper">
 
+          <div class="status <%= stories[0].completed ? 'completed' : '' %>">
+            <div class="text-block">
+              <%= stories[0].completed ? "Completed" : "Active" %>
+            </div>
+          </div>
+
           <div class="main_guide_header">
             <div class="created_by_wrapper">
               <div class="main_user">
@@ -40,16 +46,11 @@
                 </div>
               </div>
             </div>
-            <div class="status <%= stories[0].completed ? 'completed' : '' %>">
-              <div class="text-block">
-                <%= stories[0].completed ? "Completed" : "Active" %>
-              </div>
-            </div>
           </div>
 
           <div class="main_guide_action">
             <% if (username===stories[0].name && stories[0].completed !==true) { %>
-              <div class="status mark_status">
+              <div class="mark_status">
 
                 <form action="/api/completeStory/<%= stories[0].id %>" method="POST">
                   <button type="submit" class="mark_story_button">Mark Complete</button>
@@ -87,11 +88,11 @@
         </div>
 
         <!-- submissions  -->
-        <% if (typeof username !== 'undefined' && username) { %>
+        <% if (typeof username !=='undefined' && username) { %>
           <% if (!stories[0].completed) { %>
             <%- include('components/_submissions_queue') %>
               <% } %>
-        <% } %>
+                <% } %>
 
       </div>
 

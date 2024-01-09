@@ -1,12 +1,37 @@
 <!-- navigation buttons -->
 <container class="quick_jump_wrapper">
   <div class="navigation_quick_jump">
-    <button class="quick_jump_button" onclick="jumpToActive()">Active</button>
-    <button class="quick_jump_button" onclick="jumpToCompleted()">Completed</button>
+
+    <span class="material-symbols-outlined">
+      import_contacts
+    </span>
+
+    <div class="quick_buttons">
+      <button class="quick_jump_button" onclick="jumpToActive()">Active</button>
+      <button class="quick_jump_button" onclick="jumpToCompleted()">Completed</button>
+    </div>
+
   </div>
+
+  <div class="triangle_holders">
+    <div class="triangle_left"></div>
+    <div class="triangle_right"></div>
+  </div>
+
 </container>
 
 <script>
+  window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+    var quickJumpWrapper = document.querySelector('.quick_jump_wrapper');
+
+    if (scrollPosition >= 80) {
+      quickJumpWrapper.classList.add('visible');
+    } else {
+      quickJumpWrapper.classList.remove('visible');
+    }
+  });
+
   function jumpToActive() {
     document.getElementById('active_stories').scrollIntoView();
   }

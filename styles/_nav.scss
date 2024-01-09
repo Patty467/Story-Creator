@@ -32,6 +32,10 @@ nav {
   text-decoration: none;
 }
 
+.nav_link:hover {
+  color: $accent_color;
+}
+
 .nav_link:active {
   color: #000;
 }
